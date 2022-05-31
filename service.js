@@ -1,23 +1,11 @@
-(function () {
-    'use strict';
-    
-    angular
-    .module('app')
-    .factory('TempoService', TempoService);
+angular
+.module('app')
+.service('TempoService', TempoService);
 
-    TempoService.$inject = [];
+TempoService.$inject = [];
 
-    function TempoService(){
-        var service = new EventEmitter();
-        console.log('service')
-        _.extend(service, TempoService);
-
-        service.get = get;
-
-        return service;
-
-        function get(){
-            console.log('foi');
-        }
+function TempoService(){
+    this.get = function(){
+        return 'funcionou teste' 
     }
-})
+}

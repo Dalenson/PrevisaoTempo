@@ -1,16 +1,15 @@
-(function (){
-    'use strict';
+angular
+.module('app')
+.controller('TempoController', TempoController);
 
-    angular
-    .module('app')
-    .controller('TempoController', TempoController);
+TempoController.$inject = [
+    '$scope',
+    'TempoService',
+];
 
-    /*TempoController.$inject = [
-        'TempoService',
-        '$scope'
-    ];*/
-
-    function TempoController(){
-        console.log('foi')
+function TempoController($scope, TempoService){
+    
+    function teste(){
+        console.log('teste');
     }
-})
+}
