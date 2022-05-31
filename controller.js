@@ -5,11 +5,14 @@ angular
 TempoController.$inject = [
     '$scope',
     'TempoService',
+    'Restangular',
+    '$http'
 ];
 
-function TempoController($scope, TempoService){
+function TempoController($scope, TempoService, Restangular, $http){
     
+    $scope.teste = teste();
     function teste(){
-        console.log('teste');
+        console.log('aaa')
     }
 }
