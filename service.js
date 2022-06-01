@@ -14,8 +14,7 @@ function TempoService(Restangular, $http){
             method: 'GET',
             url: 'https://api.hgbrasil.com/weather?woeid=461295',
             headers:{
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*"
+                "Content-Type": "application/json
             }
         }
         return $http(req).then(function(value){
