@@ -14,7 +14,8 @@ function TempoService(Restangular, $http){
             method: 'GET',
             url: 'https://api.hgbrasil.com/weather?woeid=461295',
             headers:{
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "https://main--jazzy-begonia-9d55b1.netlify.app/"
             }
         }
         return $http(req).then(function(value){
