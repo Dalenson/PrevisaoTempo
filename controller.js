@@ -11,8 +11,9 @@ TempoController.$inject = [
 
 function TempoController($scope, TempoService, Restangular, $http){
     
-    $scope.teste = teste();
+    $scope.teste = teste;
+
     function teste(){
-        console.log('aaa')
+        TempoService.get();
     }
 }
