@@ -25,7 +25,7 @@ function TempoService(Restangular, $http){
                         url: 'https://api.hgbrasil.com/weather?key=4a5ef733&user_ip=remote',
                         headers:{
                             "Content-Type": "application/json",
-                            "Access-Control-Allow-Origin": "*"
+                            "Access-Control-Allow-Origin": "https://previsaoetempo.herokuapp.com/#!/"
                         }}).then(function(value){
                             return value
                         })   
