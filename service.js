@@ -10,7 +10,7 @@ TempoService.$inject = [
 function TempoService(Restangular, $http){
     this.consultaTempoCidade = function(id){
         var req = $http({ method: 'GET',
-                        url: 'https://api.hgbrasil.com/weather?woeid='+id,
+                        url: 'https://cors-anywhere.herokuapp.com/https://api.hgbrasil.com/weather?woeid='+id,
                         headers:{
                             "Content-Type": "application/json",
                             "Access-Control-Allow-Origin": "*"
@@ -22,10 +22,10 @@ function TempoService(Restangular, $http){
 
     this.consultaCidade = function(){
         var req = $http({ method: 'GET',
-                        url: 'https://api.hgbrasil.com/weather?key=4a5ef733&user_ip=remote',
+                        url: 'https://cors-anywhere.herokuapp.com/https://api.hgbrasil.com/weather?key=4a5ef733&user_ip=remote',
                         headers:{
                             "Content-Type": "application/json",
-                            "Access-Control-Allow-Origin": "https://previsaoetempo.herokuapp.com/#!/"
+                            "Access-Control-Allow-Origin": "*"
                         }}).then(function(value){
                             return value
                         })   
@@ -52,10 +52,10 @@ function TempoService(Restangular, $http){
    
     this.geoIp = function(ip){
         var req = $http({method: 'GET',
-                    url: 'https://api.hgbrasil.com/geoip?key=4a5ef733&address='+ip,
+                    url: 'https://cors-anywhere.herokuapp.com/https://api.hgbrasil.com/geoip?key=4a5ef733&address='+ip,
                     headers:{
                         "Content-Type": "application/json",
-                        "Access-Control-Allow-Origin": "https://previsaoetempo.herokuapp.com/#!/",
+                        "Access-Control-Allow-Origin": "*",
                         "address":"177.66.141.88",
                         "precision":"true"
                     }}).then(function(value){
@@ -66,7 +66,7 @@ function TempoService(Restangular, $http){
     
     this.meuip = function(){
         var req = $http({method: 'GET',
-                            url:'https://api.ipify.org/',
+                            url:'https://cors-anywhere.herokuapp.com/https://api.ipify.org/',
                             headers:{
                                 "Content-Type": "application/json",
                                 "Access-Control-Allow-Origin": "*",
