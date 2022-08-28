@@ -20,25 +20,26 @@ function TempoController($scope, TempoService, Restangular, $http, $timeout){
     }
     
     function consultaCidade(){
-        var data = TempoService.consultaCidade();
-        data.then(function(value){
-            $scope.nomeCity = value.data.results.city
-            $scope.descricao = value.data.results.description
-            $scope.temp = value.data.results.temp+'°c';
-            $scope.forcast = value.data.results.forecast;
-            if(value.data.results.description.includes('nublado')){
-                $('#img').attr("src",'/img/nublado.png')
-            }
-            if(value.data.results.description.includes('huva')){
-                $('#img').attr("src",'/img/chuva.png')
-            }
-            if(value.data.results.description.includes('limpo')){
-                $('#img').attr("src",'/img/sol.png')
-            }
-        })
         var ip = Promise.resolve(TempoService.meuip());
         
         ip.then(function(value){
+            var data = TempoService.consultaCidade(value.data);
+            data.then(function(value){
+                $scope.nomeCity = value.data.results.city
+                $scope.descricao = value.data.results.description
+                $scope.temp = value.data.results.temp+'°c';
+                $scope.forcast = value.data.results.forecast;
+                if(value.data.results.description.includes('nublado')){
+                    $('#img').attr("src",'/img/nublado.png')
+                }
+                if(value.data.results.description.includes('huva')){
+                    $('#img').attr("src",'/img/chuva.png')
+                }
+                if(value.data.results.description.includes('limpo')){
+                    $('#img').attr("src",'/img/sol.png')
+                }
+            })
+        
             var geo = TempoService.geoIp(value.data);
 
             geo.then(function(value){

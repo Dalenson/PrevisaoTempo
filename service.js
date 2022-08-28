@@ -20,9 +20,9 @@ function TempoService(Restangular, $http){
         return req;
     }
 
-    this.consultaCidade = function(){
+    this.consultaCidade = function(ip){
         var req = $http({ method: 'GET',
-                        url: 'https://cors-anywhere.herokuapp.com/https://api.hgbrasil.com/weather?key=4a5ef733&user_ip=remote',
+                        url: 'https://cors-anywhere.herokuapp.com/https://api.hgbrasil.com/weather?key=4a5ef733&user_ip='+ip,
                         headers:{
                             "Content-Type": "application/json",
                             "Access-Control-Allow-Origin": "*"
