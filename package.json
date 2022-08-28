@@ -10,7 +10,7 @@
     "restangular": "^1.6.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node serve.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://gitlab.com/dal.colares/tempo/issues"
   },
-  "homepage": "https://gitlab.com/dal.colares/tempo#README"
+  "homepage": "https://gitlab.com/dal.colares/tempo#README",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }
