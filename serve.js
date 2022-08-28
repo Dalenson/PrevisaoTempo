@@ -1,11 +1,13 @@
 const express = require("express");
-
+const cors = requere("cors");
 const app = express();
 
-app.use(express.static(__dirname))
+app.use(cors());
+
+app.use(express.static(__dirname));
 
 app.get("/", function(req, res){
   res.sendFile(__dirname+'/index.html');
 });
 
-app.listen(process.env.PORT || 5000)
+app.listen(process.env.PORT || 5000);

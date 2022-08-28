@@ -4,6 +4,7 @@
   "description": "",
   "main": "angular-route.js",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.1",
     "http-server": "^14.1.0",
     "jquery": "^3.6.0",
