@@ -14,6 +14,7 @@ function TempoController($scope, TempoService, Restangular, $http, $timeout){
     
     $scope.teste = teste;
     $scope.consultaCidade = consultaCidade;
+    $scope.semanaImg = semanaImg;
 
     function teste(){
         TempoService.get();
@@ -53,8 +54,17 @@ function TempoController($scope, TempoService, Restangular, $http, $timeout){
                 }).addTo(map);
             })
         })
-        
-        
-        
+    }
+
+    function semanaImg(index, descricao){
+        if(descricao.includes('nublado')){
+            $('#'+index).attr("src",'/img/nublado.png')
+        }
+        if(descricao.includes('huva')){
+            $('#'+index).attr("src",'/img/chuva.png')
+        }
+        if(descricao.includes('limpo')){
+            $('#'+index).attr("src",'/img/sol.png')
+        }
     }
 }
