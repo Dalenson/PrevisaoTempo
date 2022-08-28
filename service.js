@@ -8,20 +8,69 @@ TempoService.$inject = [
 ];
 
 function TempoService(Restangular, $http){
-    this.get = function(){
-        // return Restangular.one('http://apiadvisor.climatempo.com.br/api/v1/anl/synoptic/locale/BR?token=a6be39c8463cf8acac051e576ff799fb').get();
-        var req = {
-            method: 'GET',
-            url: 'https://api.hgbrasil.com/weather?woeid=461295',
-            headers:{
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*",
-                'Access-Control-Allow-Headers':'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type',
-                'Access-Control-Allow-Methods':'GET, POST, OPTIONS',
-                'Access-Control-Allow-Credentials':'true'
-            }
-        }
-        return $http(req).then(function(value){
-            return value
-        })}
-}
+    this.consultaTempoCidade = function(id){
+        var req = $http({ method: 'GET',
+                        url: 'https://api.hgbrasil.com/weather?woeid='+id,
+                        headers:{
+                            "Content-Type": "application/json",
+                            "Access-Control-Allow-Origin": "*"
+                        }}).then(function(value){
+                            return value
+                        })
+        return req;
+    }
+
+    this.consultaCidade = function(){
+        var req = $http({ method: 'GET',
+                        url: 'https://api.hgbrasil.com/weather?key=4a5ef733&user_ip=remote',
+                        headers:{
+                            "Content-Type": "application/json",
+                            "Access-Control-Allow-Origin": "*"
+                        }}).then(function(value){
+                            return value
+                        })   
+        // req = {
+        //     cid: '',
+        //     city: 'Buritis, MG',
+        //     city_name: "Buritis",
+        //     condition_code: "27",
+        //     condition_slug: "clear_night",
+        //     currently: "noite",
+        //     date: "05/06/2022",
+        //     description: "Tempo nublado",
+        //     humidity: 57,
+        //     img_id: "27n",
+        //     sunrise: "06:27 am",
+        //     sunset: "05:41 pm",
+        //     temp: 19,
+        //     time: "21:47",
+        //     wind_speedy: "0.86 km/h"
+        // }   
+        return req;
+    }
+
+   
+    this.geoIp = function(ip){
+        var req = $http({method: 'GET',
+                    url: 'https://api.hgbrasil.com/geoip?key=4a5ef733&address='+ip,
+                    headers:{
+                        "Content-Type": "application/json",
+                        "Access-Control-Allow-Origin": "*",
+                        "address":"177.66.141.88",
+                        "precision":"true"
+                    }}).then(function(value){
+                        return value
+                    })   
+            return req;     
+    }
+    
+    this.meuip = function(){
+        var req = $http({method: 'GET',
+                            url:'http://meuip.com/api/meuip.php'
+                        }).then(function(value){
+                            return value
+                        })
+        return req;
+    }
+    
+} 

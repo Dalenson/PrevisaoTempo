@@ -5,9 +5,9 @@
   "main": "angular-route.js",
   "dependencies": {
     "http-server": "^14.1.0",
+    "jquery": "^3.6.0",
     "restangular": "^1.6.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
