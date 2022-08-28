@@ -4,6 +4,10 @@ const app = express();
 
 app.use(cors());
 
+app.use(cors({
+  origin: 'https://foo.com'
+}));
+
 app.use(express.static(__dirname));
 
 app.get("/", function(req, res){

@@ -55,7 +55,7 @@ function TempoService(Restangular, $http){
                     url: 'https://api.hgbrasil.com/geoip?key=4a5ef733&address='+ip,
                     headers:{
                         "Content-Type": "application/json",
-                        "Access-Control-Allow-Origin": "*",
+                        "Access-Control-Allow-Origin": "https://previsaoetempo.herokuapp.com/#!/",
                         "address":"177.66.141.88",
                         "precision":"true"
                     }}).then(function(value){
