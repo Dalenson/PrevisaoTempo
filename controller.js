@@ -68,3 +68,7 @@ function TempoController($scope, TempoService, Restangular, $http, $timeout){
         }
     }
 }
+
+
+
+// style="background-image: url(https://images.pexels.com/photos/13391438/pexels-photo-13391438.jpeg");"

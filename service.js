@@ -10,7 +10,7 @@ TempoService.$inject = [
 function TempoService(Restangular, $http){
     this.consultaTempoCidade = function(id){
         var req = $http({ method: 'GET',
-                        url: 'https://cors-anywhere.herokuapp.com/https://api.hgbrasil.com/weather?woeid='+id,
+                        url: 'https://thingproxy.freeboard.io/fetch/https://api.hgbrasil.com/weather?woeid='+id,
                         headers:{
                             "Content-Type": "application/json",
                             "Access-Control-Allow-Origin": "*"
@@ -22,7 +22,7 @@ function TempoService(Restangular, $http){
 
     this.consultaCidade = function(ip){
         var req = $http({ method: 'GET',
-                        url: 'https://cors-anywhere.herokuapp.com/https://api.hgbrasil.com/weather?key=4a5ef733&user_ip='+ip,
+                        url: 'https://thingproxy.freeboard.io/fetch/https://api.hgbrasil.com/weather?key=4a5ef733&user_ip='+ip,
                         headers:{
                             "Content-Type": "application/json",
                             "Access-Control-Allow-Origin": "*"
@@ -52,7 +52,7 @@ function TempoService(Restangular, $http){
    
     this.geoIp = function(ip){
         var req = $http({method: 'GET',
-                    url: 'https://cors-anywhere.herokuapp.com/https://api.hgbrasil.com/geoip?key=4a5ef733&address='+ip,
+                    url: 'https://thingproxy.freeboard.io/fetch/https://api.hgbrasil.com/geoip?key=4a5ef733&address='+ip,
                     headers:{
                         "Content-Type": "application/json",
                         "Access-Control-Allow-Origin": "*",
@@ -66,7 +66,7 @@ function TempoService(Restangular, $http){
     
     this.meuip = function(){
         var req = $http({method: 'GET',
-                            url:'https://cors-anywhere.herokuapp.com/https://api.ipify.org/',
+                            url:'https://thingproxy.freeboard.io/fetch/https://api.ipify.org/',
                             headers:{
                                 "Content-Type": "application/json",
                                 "Access-Control-Allow-Origin": "*",
@@ -77,4 +77,18 @@ function TempoService(Restangular, $http){
         return req;
     }
     
-} 
+    this.images = function(){
+        var page = Math.floor(Math.random() * (10000 - 1)) + 1;
+        var req = $http({method: 'GET',
+            url:'https://thingproxy.freeboard.io/fetch/https://api.pexels.com/v1/curated?query=clouds&per_page='+page,
+                headers:{
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                    "Authorization": "563492ad6f91700001000001ef09a161ef5d4cffb94691717af73edd"
+                }
+            }).then(function(value){
+                return value
+            })
+        return req;
+    }
+}
