@@ -10,7 +10,7 @@ TempoService.$inject = [
 function TempoService(Restangular, $http){
     this.consultaTempoCidade = function(id){
         var req = $http({ method: 'GET',
-                        url: 'https://thingproxy.freeboard.io/fetch/https://api.hgbrasil.com/weather?woeid='+id,
+                        url: 'https://corsproxy.io/?https://api.hgbrasil.com/weather?woeid='+id,
                         headers:{
                             "Content-Type": "application/json",
                             "Access-Control-Allow-Origin": "*"
@@ -22,7 +22,7 @@ function TempoService(Restangular, $http){
 
     this.consultaCidade = function(ip){
         var req = $http({ method: 'GET',
-                        url: 'https://thingproxy.freeboard.io/fetch/https://api.hgbrasil.com/weather?key=4a5ef733&user_ip='+ip,
+                        url: 'https://corsproxy.io/?https://api.hgbrasil.com/weather?key=4a5ef733&user_ip='+ip,
                         headers:{
                             "Content-Type": "application/json",
                             "Access-Control-Allow-Origin": "*"
@@ -52,7 +52,7 @@ function TempoService(Restangular, $http){
    
     this.geoIp = function(ip){
         var req = $http({method: 'GET',
-                    url: 'https://thingproxy.freeboard.io/fetch/https://api.hgbrasil.com/geoip?key=4a5ef733&address='+ip,
+                    url: 'https://corsproxy.io/?https://api.hgbrasil.com/geoip?key=4a5ef733&address='+ip,
                     headers:{
                         "Content-Type": "application/json",
                         "Access-Control-Allow-Origin": "*",
@@ -80,7 +80,7 @@ function TempoService(Restangular, $http){
     this.images = function(){
         var page = Math.floor(Math.random() * (10000 - 1)) + 1;
         var req = $http({method: 'GET',
-            url:'https://thingproxy.freeboard.io/fetch/https://api.pexels.com/v1/curated?query=clouds&per_page='+page,
+            url:'https://corsproxy.io/?https://api.pexels.com/v1/curated?query=clouds&per_page='+page,
                 headers:{
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin": "*",
