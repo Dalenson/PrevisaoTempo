@@ -66,14 +66,14 @@ function TempoService(Restangular, $http){
     
     this.meuip = function(){
         var req = $http({method: 'GET',
-                            url:'https://thingproxy.freeboard.io/fetch/https://api.ipify.org/',
-                            headers:{
-                                "Content-Type": "application/json",
-                                "Access-Control-Allow-Origin": "*",
-                            }
-                        }).then(function(value){
-                            return value
-                        })
+                    url:'https://api.allorigins.win/raw?url=https://api.ipify.org/',
+                    headers:{
+                        "Content-Type": "application/json",
+                        "Access-Control-Allow-Origin": "*",
+                    }
+                }).then(function(value){
+                    return value
+                })
         return req;
     }
     
