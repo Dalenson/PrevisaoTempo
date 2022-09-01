@@ -66,7 +66,7 @@ function TempoService(Restangular, $http){
     
     this.meuip = function(){
         var req = $http({method: 'GET',
-                    url:'https://cors-anywhere.herokuapp.com/https://api.ipify.org/',
+                    url:'https://corsproxy.io/?https://api.ipify.org/',
                     headers:{
                         "Content-Type": "application/json",
                         "Access-Control-Allow-Origin": "*",
