@@ -66,7 +66,7 @@ function TempoService(Restangular, $http){
     
     this.meuip = function(){
         var req = $http({method: 'GET',
-                    url:'https://api.allorigins.win/raw?url=https://api.ipify.org/',
+                    url:'https://api.ipify.org/',
                     headers:{
                         "Content-Type": "application/json",
                         "Access-Control-Allow-Origin": "*",
