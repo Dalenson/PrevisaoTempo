@@ -1,15 +1,15 @@
 #img{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
 
 #topo{
-    background-color: #3e365a;
+    background-color: #7acbdf;
     height: 70px;
 }
 
 #txt{
-    color: white;
+    color: rgb(0, 0, 0);
     height: 70px;
     display: inline-grid;
     align-items: center;
@@ -23,9 +23,14 @@
     justify-content: flex-end;
 }
 
-#map { height: 180px; }
+#map { height: 500px; }
 
 .img{
     width: 30px;
     height: 30px;
+}
+
+.header{
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
