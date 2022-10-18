@@ -27,4 +27,4 @@ Inicie o servidor
   node serve.js
 ```
 
-![image](https://user-images.githubusercontent.com/108817919/196549094-d96c87fd-1b69-4072-a82b-89206ecd7b29.png)
+![image](https://user-images.githubusercontent.com/108817919/196549164-72cb8af6-5b85-4d76-8409-fb52fe106d54.png)
